@@ -44,11 +44,7 @@ namespace Rece_Cald
                     Console.Write($" Numele jucatorului {k + 1} este :  ");
                     jucatori[k] = Console.ReadLine();
                 }
-                Console.WriteLine(" ");
-                Console.WriteLine("> Pentru a incepe jocul, selectati un nivel de dificultate \n");
-                Console.WriteLine("  1  -  nivel usor \n");
-                Console.WriteLine("  2  -  nivel mediu \n");
-                Console.WriteLine("  3  -  nivel greu \n");
+                SelectGameLevel();
                 int lvl = int.Parse(Console.ReadLine());
                 Console.ForegroundColor = ConsoleColor.White;
 
@@ -60,17 +56,17 @@ namespace Rece_Cald
                     case 1:
                         rnd = rnd1; ;
                         incercari = 3;
-                        Console.WriteLine($"> Am ales un numar pana la 10. Poti sa il ghicesti din { incercari } incercari ?\n");
+                        Console.WriteLine($"> Am ales un numar pana la 10. Poti sa il ghicesti din {incercari} incercari ?\n");
                         break;
                     case 2:
                         rnd = rnd2;
                         incercari = 7;
-                        Console.WriteLine($"> Am ales la intamplare un numar pana la 100. Poti sa il ghicesti din { incercari } incercari ?\n");
+                        Console.WriteLine($"> Am ales la intamplare un numar pana la 100. Poti sa il ghicesti din {incercari} incercari ?\n");
                         break;
                     case 3:
                         rnd = rnd3;
                         incercari = 11;
-                        Console.WriteLine($"> Tocmai s-a generat un numar oarecare! Poti sa il ghicesti din { incercari } incercari ?\n");
+                        Console.WriteLine($"> Tocmai s-a generat un numar oarecare! Poti sa il ghicesti din {incercari} incercari ?\n");
                         break;
                 }
 
@@ -83,7 +79,7 @@ namespace Rece_Cald
 
                     for (int i = 0; i < incercari; i++)
                     {
-                        Console.Write($" Mai ai { incercari - i } incercari la dispozitie. Ce numar crezi ca e ?  ");
+                        Console.Write($" Mai ai {incercari - i} incercari la dispozitie. Ce numar crezi ca e ?  ");
                         a[i] = Convert.ToInt32(Console.ReadLine());
 
                         //double x = a[i] - rnd[k];
@@ -99,9 +95,9 @@ namespace Rece_Cald
                         else
                         {
                             Console.ForegroundColor = ConsoleColor.DarkCyan;
-                            Console.WriteLine( );
+                            Console.WriteLine();
                             Console.WriteLine($"" +
-                                $" Felicitari {jucatori[k]} ! ' { a[i] } ' este numarul corect !\n\n");
+                                $" Felicitari {jucatori[k]} ! ' {a[i]} ' este numarul corect !\n\n");
                             break;
                         }
                     }
@@ -114,8 +110,16 @@ namespace Rece_Cald
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 // string joc = Console.ReadLine();
             }
-           
 
+        }
+
+        private static void SelectGameLevel()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("> Pentru a incepe jocul, selectati un nivel de dificultate \n");
+            Console.WriteLine("  1  -  nivel usor \n");
+            Console.WriteLine("  2  -  nivel mediu \n");
+            Console.WriteLine("  3  -  nivel greu \n");
         }
     }
 }
